@@ -1,5 +1,10 @@
+
 <%= render 'layouts/header' %>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<% flash.each do |name, msg| %>
+     <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+<% end %>
 
 
 <head>
@@ -10,8 +15,7 @@
 </head>
 <body>
 
-<%= link_to "Home", root_path %>
-<%= link_to "About", about_path %>
+
 <div class = "container">
 <%= yield %>
 </div>
